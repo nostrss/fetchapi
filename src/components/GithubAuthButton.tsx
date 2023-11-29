@@ -1,14 +1,11 @@
 'use client';
 
-interface GithubAuthButtonProps {
-  children?: React.ReactNode;
-  callback?: () => void;
-}
+import { IGithubAuthButtonProps } from '@/types/common';
 
 export default function GithubAuthButton({
   children,
   callback,
-}: GithubAuthButtonProps) {
+}: IGithubAuthButtonProps) {
   return (
     <button
       type='button'
