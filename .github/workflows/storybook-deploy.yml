@@ -43,4 +43,4 @@ jobs:
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages
-          FOLDER: storybook-static
+          FOLDER: ./storybook-static
