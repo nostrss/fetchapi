@@ -22,6 +22,6 @@ jobs:
         run: npm install
 
       - name: Build-deploy Storybook
-        run: npm run deploy-storybook -- --ci
+        run: npm run deploy-storybook
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}

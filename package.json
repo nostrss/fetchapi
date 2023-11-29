@@ -11,6 +11,11 @@
     "build-storybook": "storybook build",
     "deploy-storybook": "storybook-to-ghpages"
   },
+  "storybook-deployer": {
+    "gitUsername": "nostrss",
+    "gitEmail": "jintagi@gmail.com",
+    "commitMessage": "Deploy Storybook"
+  },
   "dependencies": {
     "next": "14.0.3",
     "react": "^18",
