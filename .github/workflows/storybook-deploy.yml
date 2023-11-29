@@ -1,0 +1,32 @@
+name: Build and Deploy Storybook
+
+on:
+  push:
+    branches:
+      - main # 여기에 사용하는 브랜치를 지정하세요.
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14 # Node.js 버전을 지정하세요.
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Storybook
+        run: npm run build-storybook
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }} # GitHub Personal Access Token을 저장한 비밀 변수를 사용하세요.
+          BRANCH: gh-pages # 배포할 브랜치를 지정하세요.
+          FOLDER: storybook-static # Storybook 빌드 결과물의 경로를 지정하세요.
