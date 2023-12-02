@@ -3,7 +3,8 @@ export interface IGithubLoginProps {
   email: string | undefined;
 }
 
-export interface IGithubAuthButtonProps {
+export interface IButtonProps {
   children?: React.ReactNode;
   callback?: () => void;
+  className?: string;
 }

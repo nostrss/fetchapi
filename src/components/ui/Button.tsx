@@ -1,16 +1,17 @@
 'use client';
 
-import { IGithubAuthButtonProps } from '@/types/common';
+import { IButtonProps } from '@/types/common';
 
 export default function GithubAuthButton({
   children,
   callback,
-}: IGithubAuthButtonProps) {
+  className,
+}: IButtonProps) {
   return (
     <button
       type='button'
       onClick={callback}
-      className='bg-black w-auto text-white'
+      className={className ? className : `bg-black w-auto text-white`}
     >
       {children}
     </button>

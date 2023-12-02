@@ -9,8 +9,13 @@ export default async function Header() {
   } = await supabase.auth.getSession();
 
   return (
-    <header className='w-full h-16 flex flex-row items-center border border-purple-800'>
-      <GithubAuth userId={session?.user.id} email={session?.user.email} />
+    <header className='w-full h-16 flex flex-row items-center border'>
+      <div className='flex items-center px-6 lg:px-0 flex-1 sm:items-stretch justify-between'>
+        <div>
+          <h1>Logo</h1>
+        </div>
+        <GithubAuth userId={session?.user.id} email={session?.user.email} />
+      </div>
     </header>
   );
 }

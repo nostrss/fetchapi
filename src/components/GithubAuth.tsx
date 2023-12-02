@@ -1,10 +1,10 @@
 'use client';
 
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
-import GithubAuthButton from './GithubAuthButton';
-import { useCallback, useEffect, useState } from 'react';
+import GithubAuthButton from './ui/Button';
+import { useCallback, useEffect } from 'react';
 import { IGithubLoginProps } from '@/types/common';
-import { githubButtonText } from '@/constants/common';
+import { Constants } from '@/constants/common';
 import { useMultipleStates } from '@/hooks/useMulitple';
 
 export default function GithubAuth({ userId, email }: IGithubLoginProps) {
@@ -48,11 +48,11 @@ export default function GithubAuth({ userId, email }: IGithubLoginProps) {
     <>
       {auth.isUserId ? (
         <GithubAuthButton callback={signOut}>
-          {githubButtonText.logout}
+          {Constants.githubButtonText.logout}
         </GithubAuthButton>
       ) : (
         <GithubAuthButton callback={signInWithGithub}>
-          {githubButtonText.login}
+          {Constants.githubButtonText.login}
         </GithubAuthButton>
       )}
     </>

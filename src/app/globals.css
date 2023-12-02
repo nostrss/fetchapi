@@ -5,4 +5,10 @@
 body {
   width: 100%;
   box-sizing: border-box;
+  /* background-color: black;
+  border-color: grey;
+  color: white; */
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
 }
